@@ -10,7 +10,7 @@ from data.MovingMNIST import MovingMNIST
 
 if __name__ == '__main__':
     local_dir = os.path.dirname(__file__)
-    config_file = os.path.join(local_dir, 'evolve_resnet_cifar10_config.yaml')
+    config_file = os.path.join(local_dir, 'configs/evolve_alexnet_cifar10_config.yaml')
 
     with open(config_file, encoding='ascii', errors='ignore') as f:
         evolve_config = yaml.safe_load(f)
@@ -45,9 +45,9 @@ if __name__ == '__main__':
         cifar10_train = datasets.CIFAR10(root='./data', train=True, download=True, transform=cifar_transform)
         cifar10_val = datasets.CIFAR10(root='./data', train=False, download=True, transform=cifar_transform)
         data_train_loader = torch.utils.data.DataLoader(cifar10_train, batch_size=train_config['train_batches'],
-                                                        shuffle=True, num_workers=0, pin_memory=True)
+                                                        shuffle=True, num_workers=4, pin_memory=True)
         data_val_loader = torch.utils.data.DataLoader(cifar10_val, batch_size=train_config['train_batches'],
-                                                      shuffle=False, num_workers=0, pin_memory=True)
+                                                      shuffle=False, num_workers=4, pin_memory=True)
 
     elif train_config['dataset'] == 'cifar100':
         cifar100_train = datasets.CIFAR100(root='./data', train=True, download=True, transform=cifar_transform)

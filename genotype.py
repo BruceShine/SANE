@@ -40,7 +40,7 @@ class Genotype(object):
                 print('final fitness:', self.genotype_dict['final_fitness'], file=output_file)
 
     def save_genotype(self, generation):
-        genotype_file_name = './genotypes/genotype-' + str(generation) + '-' + str(self.genotype_key) + '.yaml'
+        genotype_file_name = './results/genotype-' + str(generation) + '-' + str(self.genotype_key) + '.yaml'
         self.genotype_dict['genotype_key'] = self.genotype_key
         with open(genotype_file_name, 'w') as file:
             yaml.safe_dump(self.genotype_dict, file, sort_keys=False)
