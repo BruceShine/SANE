@@ -1,7 +1,7 @@
 evolution_config:
   {
     init_genotype: ./genotypes/cnn_genotype.yaml,
-    output_file: alexnet-c10-0603-3.txt,
+    output_file: ./results/alexnet-c10-0603-5.txt,
 
     generation_limit: 100,
     genotype_number_init: 20,
@@ -35,14 +35,14 @@ train_config:
     input_size: [ 3, 32, 32 ],
     fitness_threshold:  65.37,
     final_fitness_threshold: 75.56,
-    train_device: 'cuda:0',
+    train_device: 'cuda:1',
     train_rate: 50,
     train_epochs: 10,
     full_train_epochs: 250,
     train_batches: 128,
     learning_rate: 0.001,
     loss_function: crossentropy,
-    optimizer: adam,.
+    optimizer: adam,
   }
 
 
