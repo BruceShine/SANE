@@ -8,7 +8,7 @@ feature:
     },
     -1: {
         type: output,
-        cm: avg,
+        cm: [flatten],
     },
   }
 
