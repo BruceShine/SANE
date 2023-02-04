@@ -35,7 +35,7 @@ train_config:
     input_size: [ 3, 32, 32 ],
     fitness_threshold:  65.37,
     final_fitness_threshold: 75.56,
-    train_device: 'cuda:1',
+    train_device: 'cuda:0',
     train_rate: 50,
     train_epochs: 10,
     full_train_epochs: 250,
